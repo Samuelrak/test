@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  font-size: large;
+  font-weight: 400;
+  background-image: linear-gradient(to left, #253d80, #151F28);
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+.nav-links a:last-child {
+  margin-right: 0;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.welcome-message {
+color: white
+}
+
+.success-message {
+color: white
+}
+
+.logout-message {
+color: white
+}

@@ -1,0 +1,12 @@
+<div *ngIf="tour">
+  <h2>Tour info</h2>
+  <img [src]="getPhotoUrl(tour.photo)" alt="Tour Photo" [style.max-width.px]="390" [style.max-height.px]="186">
+  <p><strong>Tour Name:</strong> {{ tour.name }}</p>
+  <p><strong>Location:</strong> {{ tour.location }}</p>
+  
+  <h2>Contact Us</h2>
+  <p>If you have any questions and want to reserve this tour, feel free to contact us:</p>
+  <img src="assets/call-us.png" alt="Call Us" [style.max-width.px]="390" [style.max-height.px]="186">
+  <p>Phone: +421-123-456-789</p>
+  <p>Email: info@KASV.sk</p>
+</div>
