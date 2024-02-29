@@ -14,15 +14,15 @@ jobs:
 
       - name: Build backend
         run: |
-           docker build -t back-end:latest ./Back-end
+           docker build -t back-end:latest ./backend
 
       - name: Build frontend
         run: |
-           docker build -t front-end:latest ./Front-end
+           docker build -t front-end:latest .
 
       - name: Build nginx
         run: |
-           docker build -t nginx:latest .
+           docker build -t nginx:latest ./nginx
 
       - name: Login to Docker Hub
         run: 
