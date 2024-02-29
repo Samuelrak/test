@@ -13,7 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to Docker Hub
-        run: echo -n "${{ secrets.DOCKER_USERNAME }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin && echo -n "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" > ~/docker_password.txt
+             docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin < ~/docker_password.txt
+             rm ~/docker_password.txt
+
 
       - name: Build backend
         run: docker build -t back-end:latest ./backend
