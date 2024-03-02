@@ -28,12 +28,12 @@ jobs:
              
       - name: Tag and push Docker images
         run: |
-          docker tag back-end:latest ${{ secrets.DOCKER_USERNAME }}/back-end:latest
-          docker tag front-end:latest ${{ secrets.DOCKER_USERNAME }}/front-end:latest
-          docker tag nginx:latest ${{ secrets.DOCKER_USERNAME }}/nginx:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/back-end:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/front-end:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/nginx:latest
+          docker tag back-end:latest samuelrak/back-end:latest
+          docker tag front-end:latest samuelrak/front-end:latest
+          docker tag nginx:latest samuelrak/nginx:latest
+          docker push samuelrak/back-end:latest
+          docker push samuelrak/front-end:latest
+          docker push samuelrak/nginx:latest
           
   deploy:
     runs-on: self-hosted
