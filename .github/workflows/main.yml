@@ -12,6 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Static Code Analysis
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - run: npm install eslint --save-dev
+      - run: npx eslint .
+
       - name: Build backend
         run: docker build -t back-end:latest ./backend
 
