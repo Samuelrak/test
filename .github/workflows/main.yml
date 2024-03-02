@@ -28,12 +28,12 @@ jobs:
              
       - name: Tag and push Docker images
         run: |
-          docker tag back-end:latest samuelrak/back-end:latest
-          docker tag front-end:latest samuelrak/front-end:latest
-          docker tag nginx:latest samuelrak/nginx:latest
-          docker push samuelrak/back-end:latest
-          docker push samuelrak/front-end:latest
-          docker push samuelrak/nginx:latest
+          sudo docker tag back-end:latest samuelrak/back-end:latest
+          sudo docker tag front-end:latest samuelrak/front-end:latest
+          sudo docker tag nginx:latest samuelrak/nginx:latest
+          sudo docker push samuelrak/back-end:latest
+          sudo docker push samuelrak/front-end:latest
+          sudo docker push samuelrak/nginx:latest
           
   deploy:
     runs-on: self-hosted
