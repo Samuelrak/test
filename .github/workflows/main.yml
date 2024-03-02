@@ -12,12 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" > ~/docker_password.txt
-             docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin < ~/docker_password.txt
-             rm ~/docker_password.txt
-
-
       - name: Build backend
         run: docker build -t back-end:latest ./backend
 
@@ -27,6 +21,11 @@ jobs:
       - name: Build nginx
         run: docker build -t nginx:latest ./nginx
 
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" > ~/docker_password.txt
+             docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin < ~/docker_password.txt
+             rm ~/docker_password.txt
+             
       - name: Tag and push Docker images
         run: |
           docker tag back-end:latest ${{ secrets.DOCKER_USERNAME }}/back-end:latest
