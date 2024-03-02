@@ -34,6 +34,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/back-end:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/front-end:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/nginx:latest
+          
   deploy:
     runs-on: self-hosted
     needs: build
