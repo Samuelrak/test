@@ -22,9 +22,10 @@ jobs:
         run: docker build -t nginx:latest ./nginx
 
       - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" > ~/docker_password.txt
-             docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin < ~/docker_password.txt
-             rm ~/docker_password.txt
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" > ~/docker_password.txt
+          docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin < ~/docker_password.txt
+          rm ~/docker_password.txt
              
       - name: Tag and push Docker images
         run: |
